@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import React from "react";
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
@@ -48,21 +48,20 @@ function App() {
     <>
     {/* <Navbar title="TextUtils" aboutText="About US"/> */}
     {/* <Navbar />  */}
-    {/* <Router> */}
+    <Router>
       
     <Navbar title="TextUtils" aboutText="About" mode={mode} togglemode={togglemode}/>
     <Alert alert={alert}/>
     <div className="container my-3">
 
-    {/* <Routes> */}
-      {/* <Route path="/about" element={<About />} /> */}
-      {/* <Route path="/" element={<TextForm heading="Enter the Text to analyze below" mode={mode} showAlert={showAlert}/>} /> */}
-    {/* </Routes> */}
-    <TextForm heading="Enter the Text to analyze below" mode={mode} showAlert={showAlert}/>
-        
+    <Routes>
+      <Route path="/about" element={<About mode={mode}/>} />
+      <Route path="/" element={<TextForm heading="Try Textutils - Word counter, character counter, Remove Extra spaces" mode={mode} showAlert={showAlert}/>} />
+    </Routes>
+    {/* <TextForm heading="Enter the Text to analyze below" mode={mode} showAlert={showAlert}/> */}
     {/* <About/> */}
     </div>
-    {/* </Router> */}
+    </Router>
 
     </>
   );
